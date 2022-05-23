@@ -7,8 +7,12 @@
   <ItemGroup>
     <Folder Include="DataColumn\" />
     <Folder Include="Entity\" />
-    <Folder Include="CommandHandlers\" />
     <Folder Include="QueryHandlers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TruckMessage.Core\TruckMessage.Core.csproj" />
+    <ProjectReference Include="..\TruckMessage.Public\TruckMessage.Public.csproj" />
   </ItemGroup>
 
 </Project>
