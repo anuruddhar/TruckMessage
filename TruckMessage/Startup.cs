@@ -9,6 +9,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TruckMessage.Core.Connection;
+using TruckMessage.Core.DataAccess;
+using TruckMessage.Core.Encrypter;
+using TruckMessage.Core.Service.RequestContext;
+using TruckMessage.Core.Service.UserHelper;
 
 namespace TruckMessage {
     public class Startup {
@@ -21,6 +26,14 @@ namespace TruckMessage {
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services) {
             services.AddControllers();
+
+
+
+            services.AddScoped<IEncrypter, Encrypter>();
+            services.AddScoped<ConnectionStrings>();
+            services.AddScoped<IUserHelper, UserHelper>();
+            services.AddScoped<IRequestContextService, RequestContextService>();
+            services.AddScoped<IDatabase, Database>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
